@@ -319,38 +319,26 @@
         console.log(Cookies.get("csrftoken"));
     </script>
     <script>
-
         mapboxgl.accessToken = 'pk.eyJ1IjoiaGFyc2hhbC0wOTAyIiwiYSI6ImNreGQ4dHB5aTEzY2IycHBnbXYzZ2pxdXAifQ.Gf9W5Ns9MkS9MQDjk9PB9Q';
         const map = new mapboxgl.Map({
             container: 'map',
-            maxZoom: 99,
-            minZoom: 4,
-            zoom: 15,
-            center: [77.2334, 28.6507],
-            style: 'mapbox://styles/mapbox/dark-v10'
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-122.619991, 45.536023],
+            zoom: 10.5
         });
 
         map.on('load', () => {
-            map.addSource('radar', {
-                'type': 'image',
-                'url': '/static/Delhi.jpg',
-                'coordinates': [
-                    [77.288881, 28.622278],
-                    [77.128581, 28.622278],
-                    [77.128581, 25.680639],
-                    [77.288881, 25.680639]
-                ]
-            });
-            map.addLayer({
-                id: 'radar-layer',
+            map.addSource('portland', {
                 'type': 'raster',
-                'source': 'radar',
-                'paint': {
-                    'raster-fade-duration': 0
-                }
+                'url': 'mapbox://examples.32xkp0wd'
+            });
+
+            map.addLayer({
+                'id': 'portland',
+                'source': 'portland',
+                'type': 'raster'
             });
         });
-
     </script>
 </body>
 
