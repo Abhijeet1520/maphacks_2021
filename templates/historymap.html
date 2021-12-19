@@ -7,6 +7,8 @@
     <title>History Map | MapIntel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap"
         rel="stylesheet" />
@@ -239,6 +241,13 @@
                 display: none;
             }
         }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 
     <div class="sidebar">
@@ -285,7 +294,7 @@
     </div>
 
     <section class="home" id="home">
-        Home
+        <div id="map"></div>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -308,6 +317,40 @@
         });
 
         console.log(Cookies.get("csrftoken"));
+    </script>
+    <script>
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoiaGFyc2hhbC0wOTAyIiwiYSI6ImNreGQ4dHB5aTEzY2IycHBnbXYzZ2pxdXAifQ.Gf9W5Ns9MkS9MQDjk9PB9Q';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            maxZoom: 99,
+            minZoom: 4,
+            zoom: 15,
+            center: [77.2334, 28.6507],
+            style: 'mapbox://styles/mapbox/dark-v10'
+        });
+
+        map.on('load', () => {
+            map.addSource('radar', {
+                'type': 'image',
+                'url': '/static/Delhi.jpg',
+                'coordinates': [
+                    [77.288881, 28.622278],
+                    [77.128581, 28.622278],
+                    [77.128581, 25.680639],
+                    [77.288881, 25.680639]
+                ]
+            });
+            map.addLayer({
+                id: 'radar-layer',
+                'type': 'raster',
+                'source': 'radar',
+                'paint': {
+                    'raster-fade-duration': 0
+                }
+            });
+        });
+
     </script>
 </body>
 
