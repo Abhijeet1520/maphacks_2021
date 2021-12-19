@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MapIntel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- start -->
+    <h1> One Stop destination for travelling , history & Safety in Delhi</h1>
+    <img src="data:image/jpeg;base64,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" alt="img", class="IMG1">
+
+    <h2>Places you will love to visit</h2>
+    
+    <img src="https://allholyplaces.com/wp-content/uploads/2018/01/amritsar-to-delhi-taxi-service.png" alt="" class="img2">
+    <h3>Click on the sidebarMenu nd to the Travel option to see Beautiful places you can visit!</h3>
+    <h2> Take a look at the History Map of the places you want to Visit </h2>
+    <p> Looking the history map helps you acknowledge how things have evolved from the past. It tells you
+        the significance of the place you are thinking to visit.
+    </p>
+    <img src="https://www.technipages.com/wp-content/uploads/2021/05/Measure-Distance-Walked-Google-Maps-600x312.png" alt="" class="img2">
+    <h3> Please Click on the sidebar menu to see the history map !!</h3>
+    <hr>
+    <img src="https://ychef.files.bbci.co.uk/976x549/p09vjsqs.png" alt="" id="h">
+    <h3> Have the pollution check before thinking of visiting </h3>
+    <h3>Click on the pollution map to check our pollution map.</h3>
+    
+    <style>
+        .IMG1{
+            height: 500px;
+            width:500px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            
+        }
+        h1{
+            color:green;
+            text-align: center;
+        }
+        .img2{
+            /* height: 100px; */
+            /* width: 500px; */
+            border-radius: 2px solid red;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        #h{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+
+
+
+    <!-- end -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 78px;
+            background: #11101d;
+            padding: 6px 14px;
+            z-index: 99;
+            transition: all 0.5s ease;
+        }
+
+        .sidebar.open {
+            width: 250px;
+        }
+
+        .sidebar .logo-details {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .sidebar .logo-details .icon {
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .sidebar .logo-details .logo_name {
+            padding-top: 20px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .sidebar.open .logo-details .icon,
+        .sidebar.open .logo-details .logo_name {
+            opacity: 1;
+        }
+
+        .sidebar .logo-details #btn {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 22px;
+            transition: all 0.4s ease;
+            font-size: 23px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .sidebar.open .logo-details #btn {
+            text-align: right;
+        }
+
+        .sidebar i {
+            color: #fff;
+            height: 60px;
+            min-width: 50px;
+            font-size: 28px;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        .sidebar .nav-list {
+            margin-top: 20px;
+            height: 100%;
+        }
+
+        .sidebar li {
+            position: relative;
+            margin: 8px 0;
+            list-style: none;
+        }
+
+        .sidebar li .tooltip {
+            position: absolute;
+            top: -20px;
+            left: calc(100% + 15px);
+            z-index: 3;
+            background: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 400;
+            opacity: 0;
+            white-space: nowrap;
+            pointer-events: none;
+            transition: 0s;
+        }
+
+        .sidebar li:hover .tooltip {
+            opacity: 1;
+            pointer-events: auto;
+            transition: all 0.4s ease;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .sidebar.open li .tooltip {
+            display: none;
+        }
+
+        .sidebar li a {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            border-radius: 12px;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            background: #11101d;
+        }
+
+        .sidebar li a:hover {
+            background: #fff;
+        }
+
+        .sidebar li a .links_name {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 400;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.4s;
+        }
+
+        .sidebar.open li a .links_name {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .sidebar li a:hover .links_name,
+        .sidebar li a:hover i {
+            transition: all 0.5s ease;
+            color: #11101d;
+        }
+
+        .sidebar li i {
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            border-radius: 12px;
+        }
+
+        .sidebar li.profile {
+            position: fixed;
+            height: 60px;
+            width: 78px;
+            left: 0;
+            bottom: -8px;
+            padding: 10px 14px;
+            background: #1d1b31;
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        .sidebar .profile #log_out {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background: #1d1b31;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 0px;
+            transition: all 0.5s ease;
+        }
+
+        .sidebar.open .profile #log_out {
+            width: 50px;
+            background: none;
+        }
+
+        .home-section {
+            position: relative;
+            background: #e4e9f7;
+            min-height: 100vh;
+            top: 0;
+            left: 78px;
+            width: calc(100% - 78px);
+            transition: all 0.5s ease;
+            z-index: 2;
+        }
+
+        .sidebar.open~.home-section {
+            left: 250px;
+            width: calc(100% - 250px);
+        }
+
+        .home-section .text {
+            display: inline-block;
+            color: #11101d;
+            font-size: 25px;
+            font-weight: 500;
+            margin: 18px;
+        }
+
+        @media (max-width: 420px) {
+            .sidebar li .tooltip {
+                display: none;
+            }
+        }
+    </style>
+
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="logo_name">MapIntel</div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <a href="/">
+                    <i class="bx bx-grid-alt"></i>
+                    <span class="links_name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="/historymap">
+                    <i class='bx bx-map-alt'></i>
+                    <span class="links_name">History Map</span>
+                </a>
+                <span class="tooltip">History Map</span>
+            </li>
+            <li>
+                <a href="/pollutionmap">
+                    <i class='bx bxs-factory'></i>
+                    <span class="links_name">Pollution Map</span>
+                </a>
+                <span class="tooltip">Pollution Map</span>
+            </li>
+            <li>
+                <a href="/travelmap">
+                    <i class='bx bx-building-house'></i>
+                    <span class="links_name">Travel Map</span>
+                </a>
+                <span class="tooltip">Travel Map</span>
+            </li>
+
+            <li class="profile">
+                <a href="/signout">
+                    <i class="bx bx-log-out" id="log_out"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <section class="home" id="home">
+        Home
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+
+    <script>
+
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+
+        searchBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();
+        });
+
+        console.log(Cookies.get("csrftoken"));
+    </script>
+</body>
+
+</html>
